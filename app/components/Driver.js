@@ -8,17 +8,29 @@ var Pending = require("./Pending");
 var helpers = require("../utils/helpers");
 
 // Create the Driver component
-var Driver = React.createClass({
-  render: function() {
+class Driver extends React.Component {
+  render() {
     return (
-            <div>
-              <h1>Welcome Driver!</h1>
-              <Confirmed />
-              <Pending />              
-            </div>          
+      <div>
+	      <h1>Welcome Driver!</h1>
+	      <Confirmed />
+	      <Pending />              
+      </div> 
     );
   }
-});
+}
+
+// var Driver = React.createClass({
+//   render: function() {
+//     return (
+//             <div>
+//               <h1>Welcome Driver!</h1>
+//               <Confirmed />
+//               <Pending />              
+//             </div>          
+//     );
+//   }
+// });
 
 // getInitialState: function() {
 //     return { savedArticles: "" };

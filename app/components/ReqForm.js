@@ -6,6 +6,105 @@ var axios = require("axios");
 var helpers = require("../utils/helpers");
 
 // Create the ReqForm component
+class ReqForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {visible: true};
+  } 
+  
+    handleForm : function(e){
+    e.preventDefault();
+    var _this = this;
+    console.log(document.querySelector('#arrivalDateInput').value, document.querySelector('#arrivalDateInput'));
+    console.log(document.querySelector('#airlineInput').value, document.querySelector('#airlineInput'));
+    var input = {
+        arrivalDateInput: document.querySelector('#arrivalDateInput').value,
+        //arrivalDateInput: document.querySelector("[name=arrivalDateInput]")
+        arrivalTimeInput: document.querySelector('#arrivalTimeInput').value,
+        airlineInput: document.querySelector('#airlineInput').value,
+        flightNumberInput: document.querySelector('#flightNumberInput').value,
+        airportInput: document.querySelector('#airportInput').value,
+        universityInput: document.querySelector('#universityInput').value,
+        addtionalInstructionInput: document.querySelector('#addtionalInstructionInput').value
+    };
+
+    
+    // axios.post('/pickupRequest', input)
+    //     .then(function(response) {
+    //          console.log('success')
+    //          console.log(response)
+    //     })
+    //     .catch(function(error) {
+    //      console.log('errorr: ', error)
+    //  })
+
+    helpers.saveRideDetails(input, function(response){
+        console.log(response.data);
+        if( response.data.success ){
+            _this.setState({
+                visible: false
+            })
+        }
+        /// whatever else needs done
+    })
+  },  
+
+  render() {
+    return (
+      <h2> Schedule Pickup Request </h2>
+            <form>
+                <div class="form-group row">
+                    <label for="ArrivalDateInput" class="col-sm-2 col-form-label">Arrival Date</label>
+                    <div class="col-auto">
+                        <input type="date" class="form-control" id="arrivalDateInput" placeholder="Arrival Date">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="ArrivalTimeInput" class="col-sm-2 col-form-label">Arrival Time</label>
+                    <div class="col-auto">
+                        <input type="time" class="form-control" id="arrivalTimeInput" placeholder="Arrival Time">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="FlightNumberInput" class="col-sm-2 col-form-label">Airline</label>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" id="airlineInput" placeholder="Airline">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="FlightNumberInput" class="col-sm-2 col-form-label">Flight Number</label>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" id="flightNumberInput" placeholder="Flight Number">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="AirportInput" class="col-sm-2 col-form-label">Airport</label>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" id="airportInput" placeholder="Airport">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="UniversityInput" class="col-sm-2 col-form-label">University</label>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" id="universityInput" placeholder="University">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Additional Instructions</label>
+                    <textarea class="form-control" id="addtionalInstructionInput" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success btn" id="savePickupRequest"><span class="glyphicon glyphicon-off"></span>Submit Request</button>
+                <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-off"></span>Update Request</button>
+            </form>
+    );
+  }
+}
+
+
+
+
+
+
 var ReqForm = React.createClass({
   getInitialState : function(){
     return {
