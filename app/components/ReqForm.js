@@ -12,7 +12,7 @@ class ReqForm extends React.Component {
     this.state = {visible: true};
   } 
   
-    handleForm : function(e){
+    handleForm(e){
     e.preventDefault();
     var _this = this;
     console.log(document.querySelector('#arrivalDateInput').value, document.querySelector('#arrivalDateInput'));
@@ -39,7 +39,7 @@ class ReqForm extends React.Component {
     //  })
 
     helpers.saveRideDetails(input, function(response){
-        console.log(response.data);
+        console.log(response.data); 
         if( response.data.success ){
             _this.setState({
                 visible: false
@@ -47,170 +47,167 @@ class ReqForm extends React.Component {
         }
         /// whatever else needs done
     })
-  },  
+  } 
 
   render() {
     return (
+     <div>   
       <h2> Schedule Pickup Request </h2>
             <form>
-                <div class="form-group row">
-                    <label for="ArrivalDateInput" class="col-sm-2 col-form-label">Arrival Date</label>
-                    <div class="col-auto">
-                        <input type="date" class="form-control" id="arrivalDateInput" placeholder="Arrival Date">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="ArrivalTimeInput" class="col-sm-2 col-form-label">Arrival Time</label>
-                    <div class="col-auto">
-                        <input type="time" class="form-control" id="arrivalTimeInput" placeholder="Arrival Time">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="FlightNumberInput" class="col-sm-2 col-form-label">Airline</label>
-                    <div class="col-auto">
-                        <input type="text" class="form-control" id="airlineInput" placeholder="Airline">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="FlightNumberInput" class="col-sm-2 col-form-label">Flight Number</label>
-                    <div class="col-auto">
-                        <input type="text" class="form-control" id="flightNumberInput" placeholder="Flight Number">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="AirportInput" class="col-sm-2 col-form-label">Airport</label>
-                    <div class="col-auto">
-                        <input type="text" class="form-control" id="airportInput" placeholder="Airport">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="UniversityInput" class="col-sm-2 col-form-label">University</label>
-                    <div class="col-auto">
-                        <input type="text" class="form-control" id="universityInput" placeholder="University">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Additional Instructions</label>
-                    <textarea class="form-control" id="addtionalInstructionInput" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-success btn" id="savePickupRequest"><span class="glyphicon glyphicon-off"></span>Submit Request</button>
-                <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-off"></span>Update Request</button>
-            </form>
-    );
-  }
-}
-
-
-
-
-
-
-var ReqForm = React.createClass({
-  getInitialState : function(){
-    return {
-        visible: true
-    }
-  },
-
-  handleForm : function(e){
-    e.preventDefault();
-    var _this = this;
-    console.log(document.querySelector('#arrivalDateInput').value, document.querySelector('#arrivalDateInput'));
-    console.log(document.querySelector('#airlineInput').value, document.querySelector('#airlineInput'));
-    var input = {
-        arrivalDateInput: document.querySelector('#arrivalDateInput').value,
-        //arrivalDateInput: document.querySelector("[name=arrivalDateInput]")
-        arrivalTimeInput: document.querySelector('#arrivalTimeInput').value,
-        airlineInput: document.querySelector('#airlineInput').value,
-        flightNumberInput: document.querySelector('#flightNumberInput').value,
-        airportInput: document.querySelector('#airportInput').value,
-        universityInput: document.querySelector('#universityInput').value,
-        addtionalInstructionInput: document.querySelector('#addtionalInstructionInput').value
-    };
-
-    
-    // axios.post('/pickupRequest', input)
-    //     .then(function(response) {
-    //          console.log('success')
-    //          console.log(response)
-    //     })
-    //     .catch(function(error) {
-    //      console.log('errorr: ', error)
-    //  })
-
-    helpers.saveRideDetails(input, function(response){
-        console.log(response.data);
-        if( response.data.success ){
-            _this.setState({
-                visible: false
-            })
-        }
-        /// whatever else needs done
-    })
-  },    
-
-  render: function() {
-    if( ! this.state.visible ){
-        return(<div>
-            </div>);
-    }
-    return (
-       <div className="container">
-        <div className="jumbotron my-4">
-            <h1>Welcome Passenger!</h1>
-            <h2> Schedule Pickup Request </h2>
-            <form onSubmit={ this.handleForm }>
                 <div className="form-group row">
                     <label htmlFor="ArrivalDateInput" className="col-sm-2 col-form-label">Arrival Date</label>
                     <div className="col-auto">
-                        <input type="date" name="arrivalDateInput"
-                        className="form-control" id="arrivalDateInput" placeholder="Arrival Date"/>
+                        <input type="date" className="form-control" id="arrivalDateInput" placeholder="Arrival Date"/>
                     </div>
                 </div>
                 <div className="form-group row">
                     <label htmlFor="ArrivalTimeInput" className="col-sm-2 col-form-label">Arrival Time</label>
                     <div className="col-auto">
-                        <input type="time" name="arrivalTimeInput" className="form-control" id="arrivalTimeInput" placeholder="Arrival Time"/>
+                        <input type="time" className="form-control" id="arrivalTimeInput" placeholder="Arrival Time"/>
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label htmlFor="AirlineInput" className="col-sm-2 col-form-label">Airline</label>
+                    <label htmlFor="FlightNumberInput" className="col-sm-2 col-form-label">Airline</label>
                     <div className="col-auto">
-                        <input type="text" name="airlineInput" className="form-control" id="airlineInput" placeholder="Airline"/>
+                        <input type="text" className="form-control" id="airlineInput" placeholder="Airline"/>
                     </div>
                 </div>
                 <div className="form-group row">
                     <label htmlFor="FlightNumberInput" className="col-sm-2 col-form-label">Flight Number</label>
                     <div className="col-auto">
-                        <input type="text" name="flightNumberInput" className="form-control" id="flightNumberInput" placeholder="Flight Number"/>
+                        <input type="text" className="form-control" id="flightNumberInput" placeholder="Flight Number"/>
                     </div>
                 </div>
-
                 <div className="form-group row">
                     <label htmlFor="AirportInput" className="col-sm-2 col-form-label">Airport</label>
                     <div className="col-auto">
-                        <input type="text" name="airportInput" className="form-control" id="airportInput" placeholder="Airport"/>
+                        <input type="text" className="form-control" id="airportInput" placeholder="Airport"/>
                     </div>
                 </div>
                 <div className="form-group row">
                     <label htmlFor="UniversityInput" className="col-sm-2 col-form-label">University</label>
                     <div className="col-auto">
-                        <input type="text" name="universityInput" className="form-control" id="universityInput" placeholder="University"/>
+                        <input type="text" className="form-control" id="universityInput" placeholder="University"/>
                     </div>
                 </div>
                 <div className="form-group">
                     <label htmlFor="exampleFormControlTextarea1">Additional Instructions</label>
-                    <textarea className="form-control" name="addtionalInstructionInput" id="addtionalInstructionInput" rows="3"></textarea>
+                    <textarea className="form-control" id="addtionalInstructionInput" rows="3"></textarea>
                 </div>
-                <button type="submit" action="submit" name="savePickupRequest" className="btn btn-success btn" id="savePickupRequest"><span className="glyphicon glyphicon-off"></span>Submit Request</button>
-                <button type="submit" action="submit" name="updateRequest" id="updateRequest" className="btn btn-info"><span className="glyphicon glyphicon-off"></span>Update Request</button>
+                <button type="submit" className="btn btn-success btn" id="savePickupRequest"><span className="glyphicon glyphicon-off"></span>Submit Request</button>
+                <button type="submit" className="btn btn-info"><span className="glyphicon glyphicon-off"></span>Update Request</button>
             </form>
         </div>
-       </div>
-          
     );
   }
-});
+}
+
+//var ReqForm = React.createClass({
+//   getInitialState : function(){
+//     return {
+//         visible: true
+//     }
+//   },
+
+  // handleForm : function(e){
+  //   e.preventDefault();
+  //   var _this = this;
+  //   console.log(document.querySelector('#arrivalDateInput').value, document.querySelector('#arrivalDateInput'));
+  //   console.log(document.querySelector('#airlineInput').value, document.querySelector('#airlineInput'));
+  //   var input = {
+  //       arrivalDateInput: document.querySelector('#arrivalDateInput').value,
+  //       //arrivalDateInput: document.querySelector("[name=arrivalDateInput]")
+  //       arrivalTimeInput: document.querySelector('#arrivalTimeInput').value,
+  //       airlineInput: document.querySelector('#airlineInput').value,
+  //       flightNumberInput: document.querySelector('#flightNumberInput').value,
+  //       airportInput: document.querySelector('#airportInput').value,
+  //       universityInput: document.querySelector('#universityInput').value,
+  //       addtionalInstructionInput: document.querySelector('#addtionalInstructionInput').value
+  //   };
+
+    
+    // axios.post('/pickupRequest', input)
+    //     .then(function(response) {
+    //          console.log('success')
+    //          console.log(response)
+    //     })
+    //     .catch(function(error) {
+    //      console.log('errorr: ', error)
+    //  })
+
+    // helpers.saveRideDetails(input, function(response){
+    //     console.log(response.data);
+    //     if( response.data.success ){
+    //         _this.setState({
+    //             visible: false
+    //         })
+    //     }
+        /// whatever else needs done
+    //})
+  //},    
+
+//   render: function() {
+//     if( ! this.state.visible ){
+//         return(<div>
+//             </div>);
+//     }
+//     return (
+//        <div className="container">
+//         <div className="jumbotron my-4">
+//             <h1>Welcome Passenger!</h1>
+//             <h2> Schedule Pickup Request </h2>
+//             <form onSubmit={ this.handleForm }>
+//                 <div className="form-group row">
+//                     <label htmlFor="ArrivalDateInput" className="col-sm-2 col-form-label">Arrival Date</label>
+//                     <div className="col-auto">
+//                         <input type="date" name="arrivalDateInput"
+//                         className="form-control" id="arrivalDateInput" placeholder="Arrival Date"/>
+//                     </div>
+//                 </div>
+//                 <div className="form-group row">
+//                     <label htmlFor="ArrivalTimeInput" className="col-sm-2 col-form-label">Arrival Time</label>
+//                     <div className="col-auto">
+//                         <input type="time" name="arrivalTimeInput" className="form-control" id="arrivalTimeInput" placeholder="Arrival Time"/>
+//                     </div>
+//                 </div>
+//                 <div className="form-group row">
+//                     <label htmlFor="AirlineInput" className="col-sm-2 col-form-label">Airline</label>
+//                     <div className="col-auto">
+//                         <input type="text" name="airlineInput" className="form-control" id="airlineInput" placeholder="Airline"/>
+//                     </div>
+//                 </div>
+//                 <div className="form-group row">
+//                     <label htmlFor="FlightNumberInput" className="col-sm-2 col-form-label">Flight Number</label>
+//                     <div className="col-auto">
+//                         <input type="text" name="flightNumberInput" className="form-control" id="flightNumberInput" placeholder="Flight Number"/>
+//                     </div>
+//                 </div>
+
+//                 <div className="form-group row">
+//                     <label htmlFor="AirportInput" className="col-sm-2 col-form-label">Airport</label>
+//                     <div className="col-auto">
+//                         <input type="text" name="airportInput" className="form-control" id="airportInput" placeholder="Airport"/>
+//                     </div>
+//                 </div>
+//                 <div className="form-group row">
+//                     <label htmlFor="UniversityInput" className="col-sm-2 col-form-label">University</label>
+//                     <div className="col-auto">
+//                         <input type="text" name="universityInput" className="form-control" id="universityInput" placeholder="University"/>
+//                     </div>
+//                 </div>
+//                 <div className="form-group">
+//                     <label htmlFor="exampleFormControlTextarea1">Additional Instructions</label>
+//                     <textarea className="form-control" name="addtionalInstructionInput" id="addtionalInstructionInput" rows="3"></textarea>
+//                 </div>
+//                 <button type="submit" action="submit" name="savePickupRequest" className="btn btn-success btn" id="savePickupRequest"><span className="glyphicon glyphicon-off"></span>Submit Request</button>
+//                 <button type="submit" action="submit" name="updateRequest" id="updateRequest" className="btn btn-info"><span className="glyphicon glyphicon-off"></span>Update Request</button>
+//             </form>
+//         </div>
+//        </div>
+          
+//     );
+//   }
+// });
 
 // Export the module back to the route
 module.exports = ReqForm;

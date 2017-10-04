@@ -8,11 +8,11 @@ var helpers = require("../utils/helpers");
 class Pending extends React.Component {
   render() {
     return (
-      <div class="container">
-        <div class="jumbotron my-4">
+      <div className="container">
+        <div className="jumbotron my-4">
             <h1>Welcome Driver!</h1>
             <form>
-                <table class="table table-bordered table-inverse">
+                <table className="table table-bordered table-inverse">
                     <thead>
                         <tr>
                             <h1> Passengers to be picked</h1>

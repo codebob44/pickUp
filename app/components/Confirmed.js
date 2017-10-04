@@ -8,10 +8,10 @@ var helpers = require("../utils/helpers");
 class Confirmed extends React.Component {
   render() {
     return (
-      <div class="container">
-        <div class="jumbotron my-4">
+      <div className="container">
+        <div className="jumbotron my-4">
           <form>
-              <table class="table table-bordered table-inverse">
+              <table className="table table-bordered table-inverse">
                   <thead>
                       <tr>
                           <h1> Passengers confirmed by you </h1>

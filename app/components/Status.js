@@ -8,13 +8,14 @@ var helpers = require("../utils/helpers");
 class Status extends React.Component {
   render() {
     return (
+      <div>
       <h2> Pickup status: <p id = "isPassengerPicked"> </p> </h2>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><strong>Your Driver's Information</strong></h3>
+                <div className="panel panel-default">
+                    <div className="panel-heading">
+                        <h3 className="panel-title"><strong>Your Driver's Information</strong></h3>
                     </div>
-                    <div class="panel-body">
-                        <table class="table table-striped">
+                    <div className="panel-body">
+                        <table className="table table-striped">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -31,6 +32,7 @@ class Status extends React.Component {
                         </table>
                     </div>
                 </div>
+            </div>
     );
   }
 }

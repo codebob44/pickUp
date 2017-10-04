@@ -91,7 +91,7 @@ app.post('/passengerSignup', passport.authenticate('TravelerSignup', {
 }));
 
 app.post('/passengerLogin', passport.authenticate('TravelerLogin', {
-    successRedirect: '/passengerPage',
+    successRedirect: '/passDrive',
     failureRedirect: '/mainPage',
     failureFlash: true
 }));
@@ -103,19 +103,22 @@ app.post('/driverSignup', passport.authenticate('DriverSignup', {
 }));
 
 app.post('/driverLogin', passport.authenticate('DriverLogin', {
-    successRedirect: '/driverPage',
+    successRedirect: '/passDrive',
     failureRedirect: '/mainPage',
     failureFlash: true
 }));
 
+app.get("/passDrive", isAuthenticated, function(req, res) {
+    res.sendFile(__dirname + "/public/users.html");
+});
 
 app.get("/passengerPage", isAuthenticated, function(req, res) {
-    res.sendFile(__dirname + "/public/passengerPage.html");
+    res.sendFile(__dirname + "/public/users.html");
 });
 
 
 app.get("/driverPage", isAuthenticated,  isAuthenticated, function(req, res) {
-    res.sendFile(__dirname + "/public/driverPage.html");
+    res.sendFile(__dirname + "/public/users.html");
 });
 
 

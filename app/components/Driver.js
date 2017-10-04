@@ -20,6 +20,12 @@ class Driver extends React.Component {
   }
 }
 
+
+
+// Export the module back to the route
+module.exports = Driver;
+
+
 // var Driver = React.createClass({
 //   render: function() {
 //     return (
@@ -132,6 +138,3 @@ class Driver extends React.Component {
 //     return this.renderContainer();
 //   }
 // });
-
-// Export the module back to the route
-module.exports = Driver;

@@ -8,17 +8,29 @@ var ReqForm = require("./ReqForm");
 var helpers = require("../utils/helpers");
 
 // Create the Driver component
-var Passenger = React.createClass({
-  render: function() {
+class Passenger extends React.Component {
+  render() {
     return (
-            <div>
+      <div>
               <h1>Welcome Passenger!</h1>
               <Status />
               <ReqForm />              
-            </div>          
+            </div> 
     );
   }
-});
+}
 
 // Export the module back to the route
 module.exports = Passenger;
+
+// var Passenger = React.createClass({
+//   render: function() {
+//     return (
+//             <div>
+//               <h1>Welcome Passenger!</h1>
+//               <Status />
+//               <ReqForm />              
+//             </div>          
+//     );
+//   }
+// });
