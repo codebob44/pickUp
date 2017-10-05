@@ -6,25 +6,25 @@ var helpers = require("../utils/helpers");
 
 // Create the Driver component
 class Confirmed extends React.Component {
-//    constructor(props) {
-//     super(props);
+   constructor(props) {
+    super(props);
 
-//     const passengerData = [];
+    const passengerData = [{"name": "Marco", "flightNumber": "22" }, {"name": "Marco", "flightNumber": "22" }];
 
-//     for (let i = 0; i < passengerData.lenght; i++) {
-//         passengerData.push({
-//           id : response.data._id,
-//           name : response.data.name,
-//           gender : response.data.gender,
-//           arrivalDate : response.data.arrivalDate,
-//           arrivalTime : response.data.arrivalTime,
-//           flightNumber : response.data.flightNumber,
-//           note : response.data.note
-//         });
-//     }
+    // for (let i = 0; i < passengerData.lenght; i++) {
+    //     passengerData.push({
+    //       id : response.data._id,
+    //       name : response.data.name,
+    //       gender : response.data.gender,
+    //       arrivalDate : response.data.arrivalDate,
+    //       arrivalTime : response.data.arrivalTime,
+    //       flightNumber : response.data.flightNumber,
+    //       note : response.data.note
+    //     });
+    //}
 
-//     this.state = { passengerData };
-// }
+    this.state = { passengerData };
+}
 
 // render() {
 //     return (<div>
@@ -45,33 +45,33 @@ class Confirmed extends React.Component {
 //     };
 //   } 
 
-//   componentDidMount(){
-//     axios.get('/passengerData').then((response) => {
-//       console.log(response);
-//       this.setState({
-//         id : response.data._id,
+  // componentDidMount(){
+  //   axios.get('/passengerData').then((response) => {
+  //     console.log(response);
+  //     this.setState({
+  //       id : response.data._id,
 
-//         name : response.data.name,
-//         gender : response.data.gender,
-//         arrivalDate = response.data.arrivalDate,
-//         arrivalTime = response.data.arrivalTime,
-//         flightNumber = response.data.flightNumber,
-//         note = response.data.note,
+  //       name : response.data.name,
+  //       gender : response.data.gender,
+  //       arrivalDate = response.data.arrivalDate,
+  //       arrivalTime = response.data.arrivalTime,
+  //       flightNumber = response.data.flightNumber,
+  //       note = response.data.note,
 
-//         passenger
-//         travelerId = data[i]._id;
-//         travelerOrder = i + 1;
-//         travelerName = data[i].name
-//         travelerGender = data[i].gender;
-//         travelerDate = data[i].arrivalDate;
-//         travelerTime = data[i].arrivalTime;
-//         travelerFlight = data[i].flightNumber;
-//         travelerNote = data[i].note;
-//         name: response.data,
-//         isPassenger : (response.data.userType === "traveler")
-//       })
-//     })
-//   }
+  //       passenger
+  //       travelerId = data[i]._id;
+  //       travelerOrder = i + 1;
+  //       travelerName = data[i].name
+  //       travelerGender = data[i].gender;
+  //       travelerDate = data[i].arrivalDate;
+  //       travelerTime = data[i].arrivalTime;
+  //       travelerFlight = data[i].flightNumber;
+  //       travelerNote = data[i].note;
+  //       name: response.data,
+  //       isPassenger : (response.data.userType === "traveler")
+  //     })
+  //   })
+  // }
 
   render() {
     return (
@@ -93,6 +93,19 @@ class Confirmed extends React.Component {
                       </tr>
                   </thead>
                   <tbody id="displayPickedTravelersInfo">
+                    {this.state.passengerData.map(function(object, i){
+                        return <tr>                    
+                          <td>{object.flightNumber}</td>
+                          <td>{object.name}</td>
+                          <td>Gender</td>
+                          <td>Date</td>
+                          <td>Time</td>
+                          <td>Flight</td>
+                          <td>Cancel Pickup</td>
+                          <td>Notes</td>
+                      </tr>;
+                    })}
+                  
                   </tbody>
               </table>                   
           </form>
