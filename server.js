@@ -301,6 +301,10 @@ app.post("/unpickConfirm", function(req, res) {
 });
 
 
+app.get('/currentUser', function(req, res){
+ return res.json(req.user);
+});
+
 //signout
 app.get('/signout', function(req, res) {
     req.logout();

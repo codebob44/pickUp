@@ -11,11 +11,12 @@ class Pending extends React.Component {
       <div className="container">
         <div className="jumbotron my-4">
             <h1>Welcome Driver!</h1>
+            <h1> Passengers to be picked</h1>
             <form>
                 <table className="table table-bordered table-inverse">
                     <thead>
                         <tr>
-                            <h1> Passengers to be picked</h1>
+                            
                             <th>#</th>
                             <th>Name</th>
                             <th>Gender</th>

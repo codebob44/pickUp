@@ -10,11 +10,11 @@ class Confirmed extends React.Component {
     return (
       <div className="container">
         <div className="jumbotron my-4">
+         <h1> Passengers confirmed by you </h1>
           <form>
               <table className="table table-bordered table-inverse">
                   <thead>
-                      <tr>
-                          <h1> Passengers confirmed by you </h1>
+                      <tr>                    
                           <th>#</th>
                           <th>Name</th>
                           <th>Gender</th>

@@ -1,5 +1,6 @@
 // Include React as a dependency
 var React = require("react");
+var axios = require("axios");
 var Driver = require("../components/Driver");
 var Passenger = require("../components/Passenger");
 
@@ -8,12 +9,29 @@ class Main extends React.Component {
   constructor(props) {
 
     super(props);
-    this.isPassenger = true;
-    this.state = {visible: true};
-  } 
-  render() {
+    //this.userType.type
+    //this.isPassenger = false;
 
-    if (this.isPassenger) {
+    this.state = {
+      visible: true,
+      user : {},
+      isPassenger : false
+    };
+  } 
+
+  componentDidMount(){
+    axios.get('/currentUser').then((response) => {
+      console.log(response);
+      this.setState({
+        user: response.data,
+        isPassenger : (response.data.userType === "traveler")
+      })
+    })
+  }
+
+  render() {
+    console.log(this.state);
+    if (this.state.isPassenger) {
     return <Passenger />;
   }
     return <Driver />;
