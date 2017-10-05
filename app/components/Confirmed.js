@@ -1,11 +1,78 @@
 // Include React as a dependency
 var React = require("react");
-
+var axios = require("axios");
 // Include the Helper (for the saved recall)
 var helpers = require("../utils/helpers");
 
 // Create the Driver component
 class Confirmed extends React.Component {
+//    constructor(props) {
+//     super(props);
+
+//     const passengerData = [];
+
+//     for (let i = 0; i < passengerData.lenght; i++) {
+//         passengerData.push({
+//           id : response.data._id,
+//           name : response.data.name,
+//           gender : response.data.gender,
+//           arrivalDate : response.data.arrivalDate,
+//           arrivalTime : response.data.arrivalTime,
+//           flightNumber : response.data.flightNumber,
+//           note : response.data.note
+//         });
+//     }
+
+//     this.state = { passengerData };
+// }
+
+// render() {
+//     return (<div>
+//     {this.state.passengerData.map((passengerData, index) => (
+//         <p key={index}>Hello, {passengerData.name} from {passengerData.country}!</p>
+//     ))}
+//     </div>);
+// }
+
+//    constructor(props) {
+
+//     super(props);
+
+//     this.state = {
+//       visible: true,
+//       passengerData : {},
+//       //isPassenger : false
+//     };
+//   } 
+
+//   componentDidMount(){
+//     axios.get('/passengerData').then((response) => {
+//       console.log(response);
+//       this.setState({
+//         id : response.data._id,
+
+//         name : response.data.name,
+//         gender : response.data.gender,
+//         arrivalDate = response.data.arrivalDate,
+//         arrivalTime = response.data.arrivalTime,
+//         flightNumber = response.data.flightNumber,
+//         note = response.data.note,
+
+//         passenger
+//         travelerId = data[i]._id;
+//         travelerOrder = i + 1;
+//         travelerName = data[i].name
+//         travelerGender = data[i].gender;
+//         travelerDate = data[i].arrivalDate;
+//         travelerTime = data[i].arrivalTime;
+//         travelerFlight = data[i].flightNumber;
+//         travelerNote = data[i].note;
+//         name: response.data,
+//         isPassenger : (response.data.userType === "traveler")
+//       })
+//     })
+//   }
+
   render() {
     return (
       <div className="container">
