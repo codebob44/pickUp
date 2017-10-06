@@ -94,7 +94,7 @@ class ReqForm extends React.Component {
                     <label htmlFor="exampleFormControlTextarea1">Additional Instructions</label>
                     <textarea className="form-control" id="addtionalInstructionInput" rows="3"></textarea>
                 </div>
-                <button type="submit" className="btn btn-success btn" id="savePickupRequest"><span className="glyphicon glyphicon-off"></span>Submit Request</button>
+                <button onClick={this.handleForm} type="submit" className="btn btn-success btn" id="savePickupRequest"><span className="glyphicon glyphicon-off"></span>Submit Request</button>
                 <button type="submit" className="btn btn-info"><span className="glyphicon glyphicon-off"></span>Update Request</button>
             </form>
         </div>

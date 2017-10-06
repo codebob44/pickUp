@@ -9,8 +9,6 @@ class Main extends React.Component {
   constructor(props) {
 
     super(props);
-    //this.userType.type
-    //this.isPassenger = false;
 
     this.state = {
       visible: true,

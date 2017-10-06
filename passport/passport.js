@@ -17,13 +17,13 @@ module.exports = function(passport) {
     passport.deserializeUser(function(key, done) {
         if (key.type == "traveler") {
             Traveler.findById(key.id, function(err, user) {
-                console.log('deserializing user:', user);
+                //console.log('deserializing user:', user);
                 done(err, user);
             });
         }
         if (key.type == "driver") {
             Driver.findById(key.id, function(err, user) {
-                console.log('deserializing user:', user);
+                //console.log('deserializing user:', user);
                 done(err, user);
             });
         }

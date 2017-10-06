@@ -135,7 +135,7 @@ app.get("/driverProfile", isAuthenticated,  function(req,res){
     res.sendFile(__dirname + "/public/driverProfile.html");
 });
 
-//passengers to be picked
+//passengers to be picked-pending pickup requests
 app.get("/passengerData", isAuthenticated, function(req, res) {
     Traveler.find({pickupStatus: false}, function(error, doc) {
         if (error) {
@@ -146,7 +146,7 @@ app.get("/passengerData", isAuthenticated, function(req, res) {
     });
 });
 
-//passengers already picked by a driver
+//passengers already picked by a driver- confirmed pickup requests
 app.get("/pickedPassenger", isAuthenticated, function(req, res) {
     Traveler.find({driver_id: req.user._id }, function(error, doc) {
         if (error) {
@@ -283,12 +283,14 @@ app.post("/pickupConfirm", function(req, res) {
 });
 
 app.post("/unpickConfirm", function(req, res) {
+    console.log("postedunpickConfirm");
     var pickupUpdate = {
         driver_id: undefined,
         pickupStatus: false
     };
     var passengerId = req.body.passengerId;
     Traveler.findOneAndUpdate({ _id: passengerId }, pickupUpdate, function(error, doc) {
+        console.log("insidefindoneandupdate");
         // Log any errors - $set: {pickupStatus: true}
         if (error) {
             console.log(error);

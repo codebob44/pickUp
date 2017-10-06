@@ -57,6 +57,17 @@ var helpers = {
                 .then(callable);
   },  
 
+   pickupConfirm : function( data, callable ){
+    return axios.post('/pickupConfirm', data)
+                .then(callable);
+  }, 
+
+   unpickupConfirm : function( data, callable ){
+    console.log("insidehelper");
+    return axios.post('/unpickConfirm', data)
+                .then(callable);
+  },   
+
   // This will remove saved articles from our database
   deleteSaved: function(title, data, url) {
     return axios.delete("/api/saved", {
