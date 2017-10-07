@@ -14,6 +14,10 @@ h3 {
 	padding-top:20px;
 }
 
+h4 {
+	color: white;
+}
+
 
 
 
@@ -53,13 +57,27 @@ h3 {
 
 	}
 
+.panel-default>.panel-heading {
+  background-color:#35b2ec;
+}
+
+.panel-body {
+  background-color:#35b2ec;
+}
+
+.status-rows {
+  background-color: ;
+}
+     
+
 .body {
 
 	background-image: url(../images/international.jpg);
 }
 
 .navbar {
-	padding-top: 15px;
+
+	  padding-top: 15px;
     padding-bottom: 15px;
     border: 0;
     border-radius: 0;
@@ -71,7 +89,15 @@ h3 {
 }
 
 .navbar-light .navbar-brand {
+    margin-bottom: 20px;
+  padding-bottom: 20px;
     color: white;
+}
+
+
+#signout {
+  background-color: #fff;
+
 }
 
 .jumbotron-fluid {
@@ -81,6 +107,8 @@ h3 {
     padding-top: 70px;
     padding-bottom: 70px;
 }
+
+
 
 .price {
 	height:auto;
@@ -125,3 +153,101 @@ h4 {
 	color:black;
 
 	}
+.panel-heading {
+  background-color:#35b2ec;
+
+}
+
+	@media (min-width: 375px) and (max-width: 575px) { 
+
+  .loginWraper {
+   max-width:300px;
+  }
+  
+
+	html {
+    font-size: 11px;
+  }
+
+  .navbar {
+  	max-width: 375px;
+
+
+  }
+
+  .container {
+  	max-width:375px;
+  }
+
+  .jumbotron {
+   max-width:375px;
+  }
+
+  .form-inline {
+  	    flex-flow: hidden;
+  	    display: none;
+  }
+
+  .jumbotron-fluid { 
+   padding-top:10px;
+   padding-bottom:15px;
+
+  }
+
+  .btn-outline-warning {
+    font-size:35px;
+    font-family: sans-serif;
+  }
+
+
+
+   }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) { 
+   .container {
+    max-width:900px;
+  }
+
+  .jumbotron {
+   max-width:900px;
+  }
+
+  .loginWraper {
+   max-width:900px;
+   margin:0 auto;
+  }
+  
+
+
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+ .container {
+  	max-width:900px;
+  }
+
+  .jumbotron {
+   max-width:900px;
+  }
+
+  .loginWraper {
+   max-width:900px;
+   margin:0 auto;
+  }
+	
+
+ }
+
+
+  .loginWraper {
+   max-width:350px;
+   margin:0 auto;
+  }

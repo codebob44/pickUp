@@ -51,7 +51,7 @@ class Pending extends React.Component {
     return (
       <div className="container">
         <div className="jumbotron my-4">
-         <h1> Passengers that need rides </h1>
+         <h1> Pending Passenger Requests </h1>
           <form>
               <table className="table table-bordered table-inverse">
                   <thead>

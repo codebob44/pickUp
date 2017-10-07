@@ -51,9 +51,10 @@ class ReqForm extends React.Component {
 
   render() {
     return (
-     <div>   
-      <h2> Schedule Pickup Request </h2>
-            <form>
+     <div className="container">
+        <div className="jumbotron my-4">  
+      <h2> Schedule a Pickup Request </h2>
+            <form className="requestForm">
                 <div className="form-group row">
                     <label htmlFor="ArrivalDateInput" className="col-sm-2 col-form-label">Arrival Date</label>
                     <div className="col-auto">
@@ -97,6 +98,7 @@ class ReqForm extends React.Component {
                 <button onClick={this.handleForm} type="submit" className="btn btn-success btn" id="savePickupRequest"><span className="glyphicon glyphicon-off"></span>Submit Request</button>
                 <button type="submit" className="btn btn-info"><span className="glyphicon glyphicon-off"></span>Update Request</button>
             </form>
+        </div>
         </div>
     );
   }

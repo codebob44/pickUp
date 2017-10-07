@@ -75,7 +75,7 @@ class Confirmed extends React.Component {
                           <td>{object.arrivalDate}</td>
                           <td>{object.arrivalTime}</td>
                           <td>{object.flightNumber}</td>
-                          <td><button onClick={(event)=> {event.preventDefault(); this.handleunpickupConfirm(event, object._id)}} className="btn btn-success btn" id="savePickupRequest"><span className="glyphicon glyphicon-off"></span>Submit Request</button></td>
+                          <td><button  onClick={(event)=> {event.preventDefault(); this.handleunpickupConfirm(event, object._id)}} className="btn btn-success btn" id="savePickupRequest"><span className="glyphicon glyphicon-off"></span>Unconfirm Pick Up</button></td>
                           <td>{object.notes}</td>
                       </tr>;
                     })}
